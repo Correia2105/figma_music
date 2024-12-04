@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Vinyl Record</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff;
+            margin: 0;
+        }
+        .record {
+            cursor: pointer;
+            width: 200px; /* Adjust size as needed */
+        }
+    </style>
+</head>
+<body>
+    <!-- The vinyl record image -->
+    <img src="vinyl-record.png" alt="Vinyl Record" class="record" id="record">
+    
+    <!-- Audio file to play music -->
+    <audio id="music" src="music.mp3"></audio>
+
+    <script>
+        // JavaScript to play/pause the music
+        const record = document.getElementById('record');
+        const music = document.getElementById('music');
+
+        record.addEventListener('click', () => {
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        });
+    </script>
+</body>
+</html>
